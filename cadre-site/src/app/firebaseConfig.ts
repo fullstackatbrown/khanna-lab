@@ -8,9 +8,9 @@ import {
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_LOGIN_API_KEY,
-  authDomain: 'meyers-lab.firebaseapp.com',
-  projectId: 'meyers-lab',
-  storageBucket: 'meyers-lab.appspot.com',
+  authDomain: 'cadre-webpage.firebaseapp.com',
+  projectId: 'cadre-webpage',
+  storageBucket: 'cadre-webpage.appspot.com',
   messagingSenderId: process.env.NEXT_PUBLIC_APP_MSG,
   appId: process.env.NEXT_PUBLIC_APP_APP,
   measurementId: process.env.NEXT_PUBLIC_APP_MSR,

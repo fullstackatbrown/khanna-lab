@@ -1,5 +1,20 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+
+type ResourceData = {
+  date_posted: string;
+  title: string;
+  description: string;
+  event_time_date: string;
+  image_reference: string[];
+};
+type MockDataType = {
+  [key: string]: ResourceData;
+};
+
+import mockData from './mockDataResourcesDocumentation.json'
+const mockDataTyped = mockData as MockDataType;
+
 import { openDB } from 'idb';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { adminState, current } from '../Atom';
@@ -305,6 +320,34 @@ export default function Methods() {
       ) : (
         <div></div>
       )}
+
+      {/* mockData */}
+      <div className="px-6 pt-4">
+        <h2 className="text-2xl font-semibold">Additional Resources</h2>
+        <ul className="list-none space-y-6">
+        {Object.keys(mockDataTyped).map((key) => {
+          const resource = mockDataTyped[key];
+          return (
+            <li key={key} className="border-b border-gray-300 py-4">
+              <h3 className="text-lg font-bold">{resource.title}</h3>
+              <p className="text-sm text-gray-600">{resource.date_posted}</p>
+              <p className="mt-2">{resource.description}</p>
+              <p className="text-sm text-gray-600 mt-1">{resource.event_time_date}</p>
+              <div className="mt-4 flex space-x-4">
+                {resource.image_reference.map((image, imgIndex) => (
+                  <img
+                    key={imgIndex}
+                    src={image}
+                    alt={`${resource.title} Image ${imgIndex + 1}`}
+                    className="w-24 h-24 object-cover rounded"
+                  />
+                ))}
+              </div>
+            </li>
+          );
+        })}
+        </ul>
+      </div>
       <div style={{
         minHeight: `${headerHeight}px`
       }}></div>

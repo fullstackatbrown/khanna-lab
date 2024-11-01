@@ -37,7 +37,7 @@
 
   "Sample title 4": {
     "date_posted": "Tuesday, February 18th, 2023",
-    "title": "Sample Title 4",
+    "proj_name": "Sample Title 4",
     "description": "This is a mock JSON with title, description, and image reference.",
     "event_time_date": "1:00 p.m. on Sunday, Feb 29th",
     "image_reference": [
@@ -49,7 +49,7 @@
 
   "Sample title 5": {
     "date_posted": "Monday, January 5th, 2020",
-    "title": "Sample Title 5",
+    "proj_name": "Sample Title 5",
     "description": "This is a mock JSON with title, description, and image reference.",
     "event_time_date": "1:00 p.m. on Tuesday, Jan 6th",
     "image_reference": [

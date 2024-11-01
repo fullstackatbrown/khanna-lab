@@ -1,6 +1,22 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import mockData from './mockdata/mockAnnouncements.json'
+
+type ResourceData = {
+  date_posted: string;
+  proj_name: string;
+  description: string;
+  event_time_date: string;
+  image_reference: string[];
+};
+
+type DataType = {
+  [key: string]: ResourceData;
+};
+
+//mock data set up
+const mockDataTyped = mockData as DataType;
 
 export default function About() {
   const [headerHeight, setHeaderHeight] = useState(0);

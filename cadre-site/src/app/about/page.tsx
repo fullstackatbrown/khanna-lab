@@ -134,6 +134,22 @@ export default function About() {
           );
         })}
       </ul>
+
+       {/* Rendering team members */}
+      <h2 className="text-2xl font-semibold mt-16 mb-8">Researchers & Collaborators</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Responsive grid */}
+        {teamMembers.map((member) => (
+          <div key={member.id} className="flex flex-col items-center team-card hover:shadow-md transition-shadow duration-300">
+            <img
+              src={member.img_url}
+              alt={`${member.name}`}
+              className="h-24 w-24 rounded-full object-cover mb-4"
+            />
+            <h3 className="text-lg font-semibold">{member.name}</h3>
+            <p className="text-sm text-gray-600 text-center">{member.bio}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

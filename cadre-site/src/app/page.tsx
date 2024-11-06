@@ -39,7 +39,7 @@ export default function Page() {
         <div className="flex w-[70%] justify-center text-left">
           <h1 className="mr-[3vw] mt-[2vh]"> Our Purpose </h1>
         </div>
-        <div className="mt-[3vh] min-h-[10vh] w-[70%] text-xl font-normal">
+        <div className="mt-[3vh] min-h-[10vh] w-[80%] text-xl font-normal">
           <p className="mb-[5vh] text-center">
             Welcome to the MediCOIN (Medicare COding INtensity) Report, a
             project of the Brown University School of Public Health Center for
@@ -55,7 +55,7 @@ export default function Page() {
         <div className="flex w-[70%] justify-center text-left">
           <h1 className="mr-[2vw] mt-[2vh]"> Instructions & Support </h1>
         </div>
-        <div className="mt-[3vh] min-h-[10vh] w-[70%] text-center text-xl font-normal">
+        <div className="mt-[3vh] min-h-[10vh] w-[80%] text-center text-xl font-normal">
           <p>
             Anyone may download the data we calculate at the contract level on
             the downloads page. For detailed methods on how we calculate these

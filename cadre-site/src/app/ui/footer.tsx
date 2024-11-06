@@ -1,12 +1,81 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <div className="w-500 bg-red-500 p-8 font-circ-std text-2xl text-white">
+    <div className="flex w-full items-center justify-start bg-[#f5f3ee] p-8 text-lg sm:flex-col md:flex-row">
+      <div className="justify-start">
+        <div>
+          <h2 className="text-gray-800font-circ-std mb-6 text-3xl font-bold">
+            The Center for Addiction & Disease Risk Exacerbation (CADRE)
+          </h2>
+          <div className="mb-6">
+            <p className="text-lg">Brown University School of Public Health</p>
+            <p>Box G-S121-5</p>
+            <p>121 South Main Street</p>
+            <div className="mt-1 flex items-center space-x-2">
+              <span
+                role="img"
+                aria-label="wheelchair"
+                className="text-gray-500"
+              ></span>
+              <p>Providence, RI 02912</p>
+            </div>
+          </div>
+
+          <div className="mb-4">
+            <div className="flex items-center space-x-2">
+              <span role="img" aria-label="phone" className="text-gray-500">
+                📞
+              </span>
+              <p>401-863-5173</p>
+            </div>
+            <div className="mt-2 flex items-center space-x-2">
+              <span role="img" aria-label="email" className="text-gray-500">
+                📧
+              </span>
+              <a
+                href="mailto:CADRE@BROWN.EDU"
+                className="font-medium text-red-600"
+              >
+                CADRE@BROWN.EDU
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-6 flex items-center space-x-2">
+            <span role="img" aria-label="twitter" className="text-gray-500">
+              🐦
+            </span>
+            <a
+              href="https://twitter.com/BrownCadre"
+              className="font-medium text-red-600"
+            >
+              Twitter
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="flex w-full justify-end">
+        <Image
+          src="/brownCadreLogo.png"
+          alt="Brown Cadre Logo"
+          width={500}
+          height={500}
+          draggable="false"
+        />
+      </div>
+    </div>
+  );
+};
+
+{
+  /*
+  <div className="w-500 bg-red-500 p-8 font-circ-std text-2xl text-white">
       <h1>Brown University Center for Advancing Health Policy Through Research</h1>
       <div className="flex flex-col items-start justify-start gap-1 p-0 mt-1 mb-3">
         <div className="flex items-center text-sm">
-          {/** https://heroicons.dev/ */}
+          {https://heroicons.dev/}
           <svg
             className="inline-block w-4"
             data-slot="icon"
@@ -27,15 +96,15 @@ const Footer = () => {
         </div>
         <div className="flex flex-row justify-between p-0 text-sm">
           <div>Find us here → <a href="https://cghcr.sph.brown.edu/">cahpr.sph.brown.edu</a></div>
-          {/* <div className="w-1/2 p-0 text-right">Link 2 → </div> */}
+          {<div className="w-1/2 p-0 text-right">Link 2 → </div>}
         </div>
-        {/* <div className="my-1 flex w-1/2 flex-row justify-between p-0 text-sm">
+        {<div className="my-1 flex w-1/2 flex-row justify-between p-0 text-sm">
           <p>Link 3 → </p>
           <div className="w-1/2 p-0 text-right">Link 4 → </div>
-        </div> */}
+        </div>}
             </div>
       </div>
-  );
-};
+  */
+}
 
 export default Footer;

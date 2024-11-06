@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
+// import 'styles.css';
 
 export default function NavHeader() {
   const [position, setPosition] = useState(0);
@@ -41,6 +42,7 @@ export default function NavHeader() {
           width={240}
           height={90}
           className="cursor-pointer p-4"
+          draggable="false"
         />
       </Link>
       <div>

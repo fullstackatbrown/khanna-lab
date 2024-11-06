@@ -1,5 +1,11 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 type ResourceData = {
   date_posted: string;
@@ -27,8 +33,6 @@ import {
   deleteObject,
 } from 'firebase/storage';
 import { doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
-
-
 
 export default function Methods() {
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -218,67 +222,13 @@ export default function Methods() {
     <div className="flex h-auto min-h-screen w-full flex-col px-6 pt-2">
       {/* Dynamic spacer based on header height */}
       <div style={{ minHeight: `${headerHeight}px` }}></div>
-      <div className="my-[5vh] min-h-[10vh]">
-        <h1 className="mb-3 mr-[3vw] text-center font-circ-std text-4.5xl-responsive font-bold text-primary">
-          Methods
+      <div className="my-32 min-h-[10vh]">
+        <h1 className="mb-3 mr-[3vw] text-center font-circ-std text-5xl-responsive font-bold text-primary">
+          Resources
         </h1>
-        <p className="px-[20vw] font-circ-std text-lg text-primary">
-          The PDF below includes detailed methods specifications for how our
-          measures are calculated. We will update this document with additional
-          versions as we release more data.
-        </p>
       </div>
 
-      {/* PDF Carousel */}
-      {/* {pdfFiles.length > 0 && (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            height: '67vh',
-            overflow: 'hidden',
-          }}
-        >
-          <iframe
-            src={pdfFiles[currentPdfIndex]}
-            style={{ width: '60%', height: '100%', border: 'none' }}
-            frameBorder="0"
-          ></iframe>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '20px',
-              marginTop: '10px',
-            }}
-          >
-            <button
-              onClick={goToPreviousPdf}
-              style={{
-                background: 'none',
-                border: 'none',
-                fontSize: '24px',
-                cursor: 'pointer',
-              }}
-            >
-              &#8592;
-            </button>
-            <button
-              onClick={goToNextPdf}
-              style={{
-                background: 'none',
-                border: 'none',
-                fontSize: '24px',
-                cursor: 'pointer',
-              }}
-            >
-              &#8594;
-            </button>
-          </div>
-        </div>
-      )} */}
-
+      {/* PDF Display
       {currentPdfUrl && (
         <div
           style={{
@@ -294,10 +244,10 @@ export default function Methods() {
             style={{ width: '60%', height: '100%', border: '5px solid rgb(78, 54, 41)' }}
           ></iframe>
         </div>
-      )}
+      )} */}
 
-      {/* Upload button with extra padding below */}
-      {isAdmin ? (
+      {/* Upload button */}
+      {/* {isAdmin && (
         <div
           className="mt-4 flex items-center justify-center"
           style={{ paddingBottom: '20px' }}
@@ -317,40 +267,58 @@ export default function Methods() {
             Upload PDF
           </button>
         </div>
-      ) : (
-        <div></div>
-      )}
+      )} */}
 
-      {/* mockData */}
-      <div className="px-6 pt-4">
-        <h2 className="text-2xl font-semibold">Additional Resources</h2>
-        <ul className="list-none space-y-6">
-        {Object.keys(mockDataTyped).map((key) => {
-          const resource = mockDataTyped[key];
-          return (
-            <li key={key} className="border-b border-gray-300 py-4">
-              <h3 className="text-lg font-bold">{resource.title}</h3>
-              <p className="text-sm text-gray-600">{resource.date_posted}</p>
-              <p className="mt-2">{resource.description}</p>
-              <p className="text-sm text-gray-600 mt-1">{resource.event_time_date}</p>
-              <div className="mt-4 flex space-x-4">
-                {resource.image_reference.map((image, imgIndex) => (
+      {/* Swiper with mockData*/}
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 30000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation
+          modules={[Autoplay, Pagination, Navigation]}
+          className="flex flex-col items-center justify-center w-4/5 max-w-2xl h-[60vh]" // Center everything within the Swiper
+        >
+          {Object.keys(mockDataTyped).map((key) => {
+            const resource = mockDataTyped[key];
+            return resource.image_reference.map((imageSrc, index) => (
+              <SwiperSlide key={`${key}-${index}`} className="flex flex-col items-center text-center w-full">
+                <div className="w-full h-[300px] mb-6 overflow-hidden rounded-lg">
                   <img
-                    key={imgIndex}
-                    src={image}
-                    alt={`${resource.title} Image ${imgIndex + 1}`}
-                    className="w-24 h-24 object-cover rounded"
+                    src={imageSrc}
+                    alt={`${resource.title} image ${index + 1}`}
+                    className="object-cover w-full h-full"
                   />
-                ))}
-              </div>
-            </li>
-          );
-        })}
-        </ul>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
+                <p className="text-sm text-gray-600">{resource.date_posted}</p>
+                <p className="mt-4 text-lg">{resource.description}</p>
+                <p className="mt-2 text-gray-500">{resource.event_time_date}</p>
+              </SwiperSlide>
+            ));
+          })}
+
+          <style jsx>{`
+            .swiper-button-next,
+            .swiper-button-prev {
+              color: #000; // Adjust color if needed
+              align-self: center; // Center within the flex container
+            }
+            .swiper-pagination {
+              margin-top: 20px; // Add space for dots if needed
+            }
+            .swiper-pagination-bullet {
+              background-color: #000; // Customize bullet color
+            }
+          `}</style>
+        </Swiper>
       </div>
-      <div style={{
-        minHeight: `${headerHeight}px`
-      }}></div>
     </div>
   );
 }

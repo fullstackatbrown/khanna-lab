@@ -37,21 +37,32 @@ export default function Page() {
       </div>
       <div className="mx-24 mb-[10vh] mt-[4vh] flex min-h-[10vh] flex-col items-center justify-center p-4 text-2xl font-bold">
         <div className="flex w-[70%] justify-center text-left">
-          <h1 className="mr-[3vw] mt-[2vh]"> Our purpose </h1>
+          <h1 className="mr-[3vw] mt-[2vh]"> Our Purpose </h1>
         </div>
         <div className="mt-[3vh] min-h-[10vh] w-[70%] text-xl font-normal">
-          <h1 className="mb-[5vh]">Lorem Ipsum</h1>
+          <p className="mb-[5vh] text-center">
+            Welcome to the MediCOIN (Medicare COding INtensity) Report, a
+            project of the Brown University School of Public Health Center for
+            Advancing Health Policy Through Research. The objective of this
+            website is to better understand variation in measured coding
+            intensity across Medicare Advantage contracts. We report several
+            validated measures of coding intensity in the Medicare Advantage
+            program to better understand variation that could lead to variable
+            payments in the program. Our goal is to make this data publicly
+            available for researchers and policymakers.
+          </p>
         </div>
         <div className="flex w-[70%] justify-center text-left">
           <h1 className="mr-[2vw] mt-[2vh]"> Instructions & Support </h1>
         </div>
-        <div className="mt-[3vh] min-h-[10vh] w-[70%] text-xl font-normal">
-          <h1>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </h1>
+        <div className="mt-[3vh] min-h-[10vh] w-[70%] text-center text-xl font-normal">
+          <p>
+            Anyone may download the data we calculate at the contract level on
+            the downloads page. For detailed methods on how we calculate these
+            measures, please see the methods page. Please cite this website if
+            you use these data in your own work. This project was supported by a
+            grant from Arnold Ventures.
+          </p>
         </div>
       </div>
       {/* <div className="mx-24 pb-[10vh] min-h-[10vh] p-4 text-2xl font-bold flex flex-col justify-center items-center bg-gray-200">

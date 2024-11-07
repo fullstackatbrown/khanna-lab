@@ -52,7 +52,8 @@ export default function About() {
               key={key}
               className="flex items-start space-x-5 border-b border-gray-300 py-10"
             >
-              {/* Image on the left */}
+              {/* Swiper Stuff 
+              NOT QUITE FIXED: Last mockdata key for some reason only displays one image */}
               <div className="h-48 w-60">
                 <Swiper
                   spaceBetween={2}

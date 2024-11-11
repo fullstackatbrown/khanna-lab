@@ -222,11 +222,10 @@ export default function Methods() {
     <div className="flex h-auto min-h-screen w-full flex-col px-6 pt-2">
       {/* Dynamic spacer based on header height */}
       <div style={{ minHeight: `${headerHeight}px` }}></div>
-      <div className="my-32 min-h-[10vh]">
-        <h1 className="mb-3 mr-[3vw] text-center font-circ-std text-5xl-responsive font-bold text-primary">
+        <h1 className="my-8 text-center font-circ-std text-5xl-responsive font-bold text-primary">
           Resources
         </h1>
-      </div>
+      
 
       {/* PDF Display
       {currentPdfUrl && (
@@ -270,12 +269,12 @@ export default function Methods() {
       )} */}
 
       {/* Swiper with mockData*/}
-      <div className="flex flex-col items-center justify-center min-h-screen">
+      <div className="flex flex-col items-center justify-center screen">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            delay: 30000,
+            delay: 3000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -283,7 +282,7 @@ export default function Methods() {
           }}
           navigation
           modules={[Autoplay, Pagination, Navigation]}
-          className="flex flex-col items-center justify-center w-4/5 max-w-2xl h-[60vh]" // Center everything within the Swiper
+          className="flex flex-col items-center justify-center w-4/5 max-w-2xl h-[70vh]" // Center everything within the Swiper
         >
           {Object.keys(mockDataTyped).map((key) => {
             const resource = mockDataTyped[key];
@@ -303,20 +302,6 @@ export default function Methods() {
               </SwiperSlide>
             ));
           })}
-
-          <style jsx>{`
-            .swiper-button-next,
-            .swiper-button-prev {
-              color: #000; // Adjust color if needed
-              align-self: center; // Center within the flex container
-            }
-            .swiper-pagination {
-              margin-top: 20px; // Add space for dots if needed
-            }
-            .swiper-pagination-bullet {
-              background-color: #000; // Customize bullet color
-            }
-          `}</style>
         </Swiper>
       </div>
     </div>

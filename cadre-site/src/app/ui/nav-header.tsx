@@ -54,19 +54,19 @@ export default function NavHeader() {
         <div className="my-4 flex flex-col items-center justify-end gap-2 px-0 font-circ-std md6:flex-row md6:gap-16">
           <a
             href="methods"
-            className="fade-in-out-basic flex-none text-base text-[rgb(0,0,0)] hover:text-primary-gray"
+            className="rounded px-4 py-2 text-black transition duration-300 hover:bg-gray-100 hover:text-gray-700"
           >
             Methods
           </a>
           <a
             href="download"
-            className="fade-in-out-basic flex-none text-base text-[rgb(0,0,0)] hover:text-primary-gray"
+            className="rounded px-4 py-2 text-black transition duration-300 hover:bg-gray-100 hover:text-gray-700"
           >
             Download
           </a>
           <a
             href="view"
-            className="fade-in-out-basic flex-none text-base text-[rgb(0,0,0)] hover:text-primary-gray"
+            className="rounded px-4 py-2 text-black transition duration-300 hover:bg-gray-100 hover:text-gray-700"
           >
             View Data & Findings
           </a>

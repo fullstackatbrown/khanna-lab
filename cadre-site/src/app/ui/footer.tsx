@@ -73,8 +73,8 @@ const Footer = () => {
             <Image
               src="/brownCadreLogo.png"
               alt="Brown Cadre Logo"
-              width={700}
-              height={700}
+              width={450}
+              height={400}
               draggable="false"
               className="h-auto max-w-full"
             />

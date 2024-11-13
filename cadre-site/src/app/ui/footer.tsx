@@ -27,7 +27,9 @@ const Footer = () => {
             <span role="img" aria-label="phone" className="text-red-600">
               📞
             </span>
-            <p className="text-red-600">401-863-5173</p>
+            <a href="tel:401-863-5173" className="font-medium text-red-600">
+              401-863-5173
+            </a>
           </div>
           <div className="flex items-center space-x-2">
             <span
@@ -71,8 +73,8 @@ const Footer = () => {
             <Image
               src="/brownCadreLogo.png"
               alt="Brown Cadre Logo"
-              width={700}
-              height={700}
+              width={450}
+              height={400}
               draggable="false"
               className="h-auto max-w-full"
             />

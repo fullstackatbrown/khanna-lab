@@ -25,7 +25,7 @@ export default function Page() {
         <div className="relative">
           <img
             // src="./brown-campus.png"
-            src="./sph4.jpeg"
+            src="./sph5.png"
             // src="https://communications.sph.brown.edu/sites/default/files/2022-08/zoom-bkgd-01.jpg"
             alt="Brown University"
             style={{ height: '80vh', width: '100%', objectFit: 'cover' }}
@@ -35,11 +35,11 @@ export default function Page() {
           </div> */}
         </div>
       </div>
-      <div className="mx-24 mb-[10vh] mt-[4vh] flex min-h-[10vh] flex-col items-center justify-center p-4 text-2xl font-bold">
-        <div className="flex w-[70%] justify-center text-left">
-          <h1 className="mr-[3vw] mt-[2vh]"> Our Purpose </h1>
+      <div className="mx-10 mb-[10vh] mt-[4vh] flex min-h-[10vh] flex-col items-center justify-center p-4 text-2xl font-bold">
+        <div className="flex w-[70%] justify-center text-center">
+          <h1 className="mt-[2vh]"> Our Purpose </h1>
         </div>
-        <div className="mt-[3vh] min-h-[10vh] w-[80%] text-xl font-normal">
+        <div className="mt-[3vh] min-h-[10vh] w-full text-xl font-normal">
           <p className="mb-[5vh] text-center">
             Welcome to the MediCOIN (Medicare COding INtensity) Report, a
             project of the Brown University School of Public Health Center for
@@ -52,10 +52,10 @@ export default function Page() {
             available for researchers and policymakers.
           </p>
         </div>
-        <div className="flex w-[70%] justify-center text-left">
-          <h1 className="mr-[2vw] mt-[2vh]"> Instructions & Support </h1>
+        <div className="flex w-[100%] justify-center text-center">
+          <h1 className="mt-[2vh]"> Instructions & Support </h1>
         </div>
-        <div className="mt-[3vh] min-h-[10vh] w-[80%] text-center text-xl font-normal">
+        <div className="mt-[3vh] min-h-[10vh] w-full text-center text-xl font-normal">
           <p>
             Anyone may download the data we calculate at the contract level on
             the downloads page. For detailed methods on how we calculate these
@@ -63,6 +63,20 @@ export default function Page() {
             you use these data in your own work. This project was supported by a
             grant from Arnold Ventures.
           </p>
+        </div>
+        <div className="mx-auto my-10 flex w-3/4 flex-col items-center justify-center rounded-lg bg-gray-100 p-4 shadow-md">
+          <h2 className="mb-4 text-2xl font-semibold">Check out our GitHub!</h2>
+          <p className="mb-4 text-center text-lg">
+            Explore our code and contribute to the project on GitHub.
+          </p>
+          <a
+            href="https://github.com/khanna-lab/cadre?tab=readme-ov-file"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-md bg-blue-500 px-6 py-2 font-semibold text-white transition duration-300 hover:bg-blue-400"
+          >
+            Visit GitHub
+          </a>
         </div>
       </div>
       {/* <div className="mx-24 pb-[10vh] min-h-[10vh] p-4 text-2xl font-bold flex flex-col justify-center items-center bg-gray-200">

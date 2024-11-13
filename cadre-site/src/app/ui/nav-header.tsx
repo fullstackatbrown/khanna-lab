@@ -39,7 +39,8 @@ export default function NavHeader() {
     >
       <Link
         className="fade-in-out-basic min-w-[185px] pl-6 text-[rgb(250,250,250)] hover:text-primary-gold"
-        href="/"
+        href="https://sph.brown.edu/"
+        target="_blank"
       >
         <Image
           src="/brownHealthLogo.png"

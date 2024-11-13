@@ -10,9 +10,10 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 type ResourceData = {
   date_posted: string;
   title: string;
+  pdfUrl: string;
   description: string;
   event_time_date: string;
-  image_reference: string[];
+  image_reference: string;
 };
 type MockDataType = {
   [key: string]: ResourceData;
@@ -36,6 +37,7 @@ import { doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
 
 export default function Methods() {
   const [headerHeight, setHeaderHeight] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
   // const [pdfFiles, setPdfFiles] = useState<string[]>([]);
   // const [currentPdfIndex, setCurrentPdfIndex] = useState(0);
   // const fileInputRef = useRef<HTMLInputElement>(null);
@@ -222,11 +224,10 @@ export default function Methods() {
     <div className="flex h-auto min-h-screen w-full flex-col px-6 pt-2">
       {/* Dynamic spacer based on header height */}
       <div style={{ minHeight: `${headerHeight}px` }}></div>
-      <div className="my-32 min-h-[10vh]">
-        <h1 className="mb-3 mr-[3vw] text-center font-circ-std text-5xl-responsive font-bold text-primary">
+        <h1 className="my-8 text-center font-circ-std text-5xl-responsive font-bold text-primary">
           Resources
         </h1>
-      </div>
+      
 
       {/* PDF Display
       {currentPdfUrl && (
@@ -270,54 +271,53 @@ export default function Methods() {
       )} */}
 
       {/* Swiper with mockData*/}
-      <div className="flex flex-col items-center justify-center min-h-screen">
+      <div className="flex flex-col items-center justify-center screen">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            delay: 30000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation
-          modules={[Autoplay, Pagination, Navigation]}
-          className="flex flex-col items-center justify-center w-4/5 max-w-2xl h-[60vh]" // Center everything within the Swiper
+          loop={true}
+          navigation={true}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          modules={[Autoplay, Navigation]}
+          className="flex flex-col items-center justify-center w-4/5 max-w-2xl h-[70vh]"
         >
-          {Object.keys(mockDataTyped).map((key) => {
-            const resource = mockDataTyped[key];
-            return resource.image_reference.map((imageSrc, index) => (
-              <SwiperSlide key={`${key}-${index}`} className="flex flex-col items-center text-center w-full">
-                <div className="w-full h-[300px] mb-6 overflow-hidden rounded-lg">
-                  <img
-                    src={imageSrc}
-                    alt={`${resource.title} image ${index + 1}`}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
-                <p className="text-sm text-gray-600">{resource.date_posted}</p>
-                <p className="mt-4 text-lg">{resource.description}</p>
-                <p className="mt-2 text-gray-500">{resource.event_time_date}</p>
-              </SwiperSlide>
-            ));
-          })}
-
-          <style jsx>{`
-            .swiper-button-next,
-            .swiper-button-prev {
-              color: #000; // Adjust color if needed
-              align-self: center; // Center within the flex container
-            }
-            .swiper-pagination {
-              margin-top: 20px; // Add space for dots if needed
-            }
-            .swiper-pagination-bullet {
-              background-color: #000; // Customize bullet color
-            }
-          `}</style>
+          {Object.values(mockDataTyped).map((resource, index) => (
+            <SwiperSlide key={index} className="flex flex-col items-center text-center w-full">
+              <div className="w-full h-[300px] mb-6 overflow-hidden rounded-lg">
+                <img
+                  src={resource.image_reference}
+                  alt={resource.title}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <h3 className="text-2xl font-circ-std mb-2">{resource.title}</h3>
+              <p className="mt-4 font-circ-std text-lg">{resource.description}</p>
+            </SwiperSlide>
+          ))}
         </Swiper>
+      </div>
+
+      {/*Bottom Nav Bar */}
+       <div className="relative w-full bg-gray-800 bg-opacity-40 py-10 px-20">
+        <div className="flex justify-center space-x-20 overflow-auto">
+          {Object.values(mockDataTyped).map((resource, index) => (
+            <a
+              key={index}
+              href={resource.pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-xl font-circ-std font-bold mb-2 ${
+                index === activeIndex ? "text-white" : "text-[#d3e0ea] hover:text-white"
+              }`}
+            >
+              {resource.title}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

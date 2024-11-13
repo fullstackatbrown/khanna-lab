@@ -74,7 +74,7 @@ export default function NavHeader() {
             href="view"
             className="rounded px-4 py-2 text-black transition duration-300 hover:bg-gray-100 hover:text-gray-700"
           >
-            View Data & Findings
+            A
           </a>
         </div>
       </div>
@@ -133,11 +133,11 @@ export default function NavHeader() {
             Download
           </a>
           <a
-            href="view"
+            href="about"
             className="w-full border-t-2 border-gray-100 py-4 text-center text-black hover:bg-gray-100 hover:text-gray-700"
             onClick={() => setMenuOpen(false)}
           >
-            View Data & Findings
+            About
           </a>
         </div>
       </div>

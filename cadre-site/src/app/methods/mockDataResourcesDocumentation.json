@@ -2,24 +2,18 @@
     "Sample title 1": {
       "date_posted": "Thursday, November 9th, 2023",
       "title": "Sample Title 1",
+      "pdfUrl": "link_1.pdf",
       "description": "This is a mock JSON with title, description, and image reference.",
       "event_time_date": "1:00 p.m. on Friday, Nov 10th",
-      "image_reference": [
-        "https://placehold.co/1000x1000/F7F7F7/766153.png",
-        "https://placehold.co/999x999/F7F7F7/766153.png",
-        "https://placehold.co/888x888/F7F7F7/766153.png"
-      ]
+      "image_reference": "https://placehold.co/1000x1000/F7F7F7/766153.png"
     },
     "Sample title 2": {
       "date_posted": "Wednesday, November 8th, 2023",
       "title": "Sample Title 2",
+      "pdfUrl": "link_2.pdf",
       "description": "This is a mock JSON with title, description, and image reference.",
       "event_time_date": "1:00 p.m. on Thursday, Nov 9th",
-      "image_reference": [
-        "https://placehold.co/1000x1000/F7F7F7/766153.png",
-        "https://placehold.co/999x999/F7F7F7/766153.png",
-        "https://placehold.co/888x888/F7F7F7/766153.png"
-      ]
+      "image_reference": "https://placehold.co/999x999/F7F7F7/766153.png"
     }
 }
   

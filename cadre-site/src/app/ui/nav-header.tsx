@@ -50,9 +50,8 @@ export default function NavHeader() {
       style={{ borderBottom: '3px solid rgb(255,255,255)' }}
     >
       <Link
-        className="fade-in-out-basic min-w-[185px] pl-1 text-[rgb(250,250,250)] hover:text-primary-gold md:pl-5"
-        href="https://sph.brown.edu/"
-        target="_blank"
+        className="fade-in-out-basic min-w-[185px] pl-1 text-[rgb(250,250,250)] hover:text-primary-gold sm:pl-5"
+        href="/"
       >
         <Image
           src="/brownHealthLogo.png"
@@ -94,7 +93,7 @@ export default function NavHeader() {
       {/* Hamburger / Close Button */}
       <button
         onClick={toggleMenu}
-        className="pr-2 text-black focus:outline-none md:hidden md:pr-4"
+        className="pr-2 text-black focus:outline-none sm:pr-4 md:hidden"
       >
         <svg
           className={`h-9 w-9 transition-transform duration-300 ${

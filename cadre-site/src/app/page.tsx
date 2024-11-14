@@ -1,5 +1,51 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+
+function Aditya() {
+  return (
+    <div className="my-2 flex w-full flex-col items-center justify-center gap-x-8 md6:my-10 md6:flex-row md6:gap-x-20 md6:gap-y-6">
+      <div className="flex justify-center">
+        <Image
+          src="/khanna.jpg"
+          alt="Aditya Khanna"
+          width={450}
+          height={400}
+          draggable="false"
+          className="h-auto max-w-full rounded-lg object-none object-top"
+        />
+      </div>
+      <div className="hidden h-64 w-1 rounded bg-gray-200 md6:flex" />
+      <div className="w-full max-w-lg p-6 md6:w-3/5">
+        <div className="space-y-4">
+          <h1 className="text-2xl font-semibold text-gray-900 underline md6:text-4xl">
+            Aditya Khanna
+          </h1>
+
+          <p className="text-sm text-gray-500 sm:text-lg md6:text-xl">
+            Associate Professor of Behavioral and Social Sciences | Center for
+            Alcohol & Addiction Studies
+          </p>
+
+          <div className="text-base md6:space-y-2">
+            <a
+              href="mailto:aditya_khanna@brown.edu"
+              className="flex items-center gap-2 text-sm text-red-700 hover:text-red-800"
+            >
+              <span className="text-2xl md6:text-4xl">✉</span>
+              <span>aditya_khanna@brown.edu</span>
+            </a>
+
+            <div className="flex items-center gap-2 text-gray-700">
+              <span className="text-md">📞</span>
+              <span>(401) 863-6600</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Page() {
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -35,7 +81,8 @@ export default function Page() {
           </div> */}
         </div>
       </div>
-      <div className="mx-10 mb-[10vh] mt-[4vh] flex min-h-[10vh] flex-col items-center justify-center p-4 text-2xl font-bold">
+      <div className="mx-2 mb-[10vh] mt-[4vh] flex min-h-[10vh] flex-col items-center justify-center p-4 text-2xl font-bold sm:mx-10">
+        <Aditya></Aditya>
         <div className="flex w-[70%] justify-center text-center">
           <h1 className="mt-[2vh]"> Our Purpose </h1>
         </div>

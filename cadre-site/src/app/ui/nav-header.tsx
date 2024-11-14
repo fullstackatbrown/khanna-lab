@@ -1,29 +1,41 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
 // import 'styles.css';
 
 export default function NavHeader() {
-  const [position, setPosition] = useState(0);
+  const position = useRef(0);
   const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    setPosition(window.scrollY);
+    if (typeof window !== 'undefined') {
+      position.current = window.scrollY;
 
-    const handleScroll = () => {
-      let moving = window.scrollY;
-      setVisible(position > moving);
-      setPosition(moving);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [position]);
+      const handleScroll = () => {
+        const moving = window.scrollY;
+
+        if (moving <= 75) {
+          setVisible(true); // Always show header at the top of the page
+        } else if (position.current > moving) {
+          setVisible(true); // Scrolling up, show the header
+        } else {
+          setVisible(false); // Scrolling down, hide the header
+        }
+
+        position.current = moving;
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
 
   const headerClass = visible ? 'nav-header' : 'nav-header nav-header-hidden';
 
@@ -38,7 +50,7 @@ export default function NavHeader() {
       style={{ borderBottom: '3px solid rgb(255,255,255)' }}
     >
       <Link
-        className="fade-in-out-basic min-w-[185px] pl-6 text-[rgb(250,250,250)] hover:text-primary-gold"
+        className="fade-in-out-basic min-w-[185px] pl-1 text-[rgb(250,250,250)] hover:text-primary-gold md:pl-5"
         href="https://sph.brown.edu/"
         target="_blank"
       >
@@ -82,7 +94,7 @@ export default function NavHeader() {
       {/* Hamburger / Close Button */}
       <button
         onClick={toggleMenu}
-        className="pr-6 text-black focus:outline-none md:hidden"
+        className="pr-2 text-black focus:outline-none md:hidden md:pr-4"
       >
         <svg
           className={`h-9 w-9 transition-transform duration-300 ${

@@ -47,7 +47,7 @@ export default function NavHeader() {
     <div
       id="header"
       className={`fixed z-[100] flex min-h-[16] w-full flex-row items-center justify-between bg-[#f5f3ee] pl-2 pr-4  ${headerClass}`}
-      style={{ borderBottom: '3px solid rgb(255,255,255)' }}
+      style={{ borderBottom: '4px solid rgb(230,4,4)' }}
     >
       <Link
         className="fade-in-out-basic min-w-[185px] pl-1 text-[rgb(250,250,250)] hover:text-primary-gold sm:pl-5"

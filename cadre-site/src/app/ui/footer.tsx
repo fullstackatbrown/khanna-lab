@@ -71,7 +71,10 @@ const Footer = () => {
         {/* Logo Column */}
         <div className="lg:col-span-5">
           <div className="flex justify-center lg:justify-end">
-            <Link href="/">
+            <Link
+              href="https://www.brown.edu/academics/public-health/cadre/home"
+              target="_blank"
+            >
               <Image
                 src="/brownCadreLogo.png"
                 alt="Brown Cadre Logo"

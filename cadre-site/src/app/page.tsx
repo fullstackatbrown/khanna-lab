@@ -111,9 +111,11 @@ export default function Page() {
             grant from Arnold Ventures.
           </p>
         </div>
-        <div className="mx-auto my-10 flex w-3/4 flex-col items-center justify-center rounded-lg bg-gray-100 p-4 shadow-md">
-          <h2 className="mb-4 text-2xl font-semibold">Check out our GitHub!</h2>
-          <p className="mb-4 text-center text-lg">
+        <div className="mx-auto mt-10 flex w-full flex-col items-center justify-center rounded-lg bg-gray-100 p-4 shadow-md">
+          <h2 className="mb-4 text-xl font-bold md:text-2xl">
+            Check out our GitHub!
+          </h2>
+          <p className="mb-4 text-center text-base md:text-lg">
             Explore our code and contribute to the project on GitHub.
           </p>
           <a

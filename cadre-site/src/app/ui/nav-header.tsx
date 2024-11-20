@@ -1,10 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import ReactDOM from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
-// import 'styles.css';
 
 export default function NavHeader() {
   const position = useRef(0);
@@ -46,11 +44,11 @@ export default function NavHeader() {
   return (
     <div
       id="header"
-      className={`fixed z-[100] flex min-h-[16] w-full flex-row items-center justify-between bg-[#f5f3ee] pl-2 pr-4  ${headerClass}`}
+      className={`fixed z-[100] flex min-h-[16] w-full flex-row items-center justify-between bg-[#f5f3ee] py-2 pl-2 pr-2 ${headerClass}`}
       style={{ borderBottom: '4px solid rgb(230,4,4)' }}
     >
       <Link
-        className="fade-in-out-basic min-w-[185px] pl-1 text-[rgb(250,250,250)] hover:text-primary-gold sm:pl-5"
+        className="fade-in-out-basic min-w-[185px] text-[rgb(250,250,250)] hover:text-primary-gold sm:pl-5"
         href="/"
       >
         <Image
@@ -91,36 +89,41 @@ export default function NavHeader() {
       </div>
 
       {/* Hamburger / Close Button */}
-      <button
-        onClick={toggleMenu}
-        className="pr-2 text-black focus:outline-none sm:pr-4 md:hidden"
-      >
-        <svg
-          className={`h-9 w-9 transition-transform duration-300 ${
-            menuOpen ? 'rotate-90 transform' : ''
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
+      <div className="flex w-auto flex-col items-end sm:gap-2 sm:pr-4 md:hidden">
+        <div className="mr-3 whitespace-nowrap pb-1 text-2xl font-bold text-gray-900 sm:text-4xl">
+          Khanna Lab
+        </div>
+        <button
+          onClick={toggleMenu}
+          className="pr-2 text-black focus:outline-none sm:pr-4 md:hidden"
         >
-          {menuOpen ? (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          ) : (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          )}
-        </svg>
-      </button>
+          <svg
+            className={`h-9 w-9 transition-transform duration-300 ${
+              menuOpen ? 'rotate-90 transform' : ''
+            }`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {menuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+      </div>
       <div
         className={`absolute right-0 top-[100%] w-full origin-top transform overflow-hidden bg-white shadow-lg transition-all duration-300 ease-in-out md:hidden ${
           menuOpen

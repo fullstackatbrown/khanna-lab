@@ -53,9 +53,12 @@ export default function NavHeader() {
       </Link>
       <div className="hidden pr-6 md:flex md:flex-col">
         <div className="mt-6 text-center text-3xl text-black">
-          <div className="flex justify-end pr-3 text-center font-bold text-black sm:text-base md:text-4xl">
+          <a
+            href="http://localhost:3000/"
+            className="flex justify-end pr-3 text-center font-bold text-black sm:text-base md:text-4xl"
+          >
             Khanna Lab
-          </div>
+          </a>
         </div>
         <div className="my-4 flex flex-col items-center justify-end gap-2 px-0 font-circ-std text-lg md:flex-row">
           <a
@@ -71,10 +74,10 @@ export default function NavHeader() {
             Download
           </a>
           <a
-            href="view"
+            href="about"
             className="rounded px-4 py-2 text-black transition duration-300 hover:bg-gray-100 hover:text-gray-700"
           >
-            A
+            About
           </a>
         </div>
       </div>

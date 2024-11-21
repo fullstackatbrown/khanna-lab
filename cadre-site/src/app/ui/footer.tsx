@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -70,14 +71,19 @@ const Footer = () => {
         {/* Logo Column */}
         <div className="lg:col-span-5">
           <div className="flex justify-center lg:justify-end">
-            <Image
-              src="/brownCadreLogo.png"
-              alt="Brown Cadre Logo"
-              width={450}
-              height={400}
-              draggable="false"
-              className="h-auto max-w-full"
-            />
+            <Link
+              href="https://www.brown.edu/academics/public-health/cadre/home"
+              target="_blank"
+            >
+              <Image
+                src="/brownCadreLogo.png"
+                alt="Brown Cadre Logo"
+                width={450}
+                height={400}
+                draggable="false"
+                className="h-auto max-w-full"
+              />
+            </Link>
           </div>
         </div>
       </div>

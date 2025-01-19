@@ -43,7 +43,7 @@ export default function About() {
 
   return (
     <div className="px-60 py-40">
-      <h2 className="text-2xl font-semibold">Projects</h2>
+      <h2 className="text-4xl font-semibold pt-5 border-gray-300">Projects</h2>
       <ul className="list-none">
         {Object.keys(mockDataTyped).map((key) => {
           const resource = mockDataTyped[key];

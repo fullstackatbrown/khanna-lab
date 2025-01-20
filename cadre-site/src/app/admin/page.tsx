@@ -112,18 +112,19 @@ export default function Page() {
   }, []);
 
   return (
-    <div>
-      <div style={{ minHeight: `${headerHeight}px` }}></div>
-      {isAdmin ? (
-        <AdminDash />
-      ) : (
-        // Render this block if isAdmin is false
-        <div>
-          {/* <div>Sign in here for admin access.</div> */}
-          <div className="firebase-auth-container">{Auth()}</div>
-        </div>
-      )}
-    </div>
+    <div></div>
+    // <div>
+    //   <div style={{ minHeight: `${headerHeight}px` }}></div>
+    //   {isAdmin ? (
+    //     <AdminDash />
+    //   ) : (
+    //     // Render this block if isAdmin is false
+    //     <div>
+    //       {/* <div>Sign in here for admin access.</div> */}
+    //       <div className="firebase-auth-container">{Auth()}</div>
+    //     </div>
+    //   )}
+    // </div>
     // <div>
     //   <div style={{ minHeight: `${headerHeight}px` }}></div>
     //   <div className="firebase-auth-container">{Auth()}</div>

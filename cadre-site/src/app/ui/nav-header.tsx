@@ -49,7 +49,7 @@ export default function NavHeader() {
     >
       <Link
         className="fade-in-out-basic min-w-[185px] text-[rgb(250,250,250)] hover:text-primary-gold sm:pl-5"
-        href="/"
+        href="https://khanna-lab.vercel.app"
       >
         <Image
           src="/brownHealthLogo.png"
@@ -63,7 +63,7 @@ export default function NavHeader() {
       <div className="hidden pr-6 md:flex md:flex-col">
         <div className="mt-6 text-center text-3xl text-black">
           <a
-            href="http://localhost:3000/"
+            href="https://khanna-lab.vercel.app"
             className="flex justify-end pr-3 text-center font-bold text-black sm:text-base md:text-4xl"
           >
             Khanna Lab
@@ -71,19 +71,19 @@ export default function NavHeader() {
         </div>
         <div className="my-4 flex flex-col items-center justify-end gap-2 px-0 font-circ-std text-lg md:flex-row">
           <a
-            href="methods"
+            href="https://khanna-lab.vercel.app/methods"
             className="rounded px-4 py-2 text-black transition duration-300 hover:bg-gray-100 hover:text-gray-700"
           >
             Methods
           </a>
           <a
-            href="download"
+            href="https://khanna-lab.vercel.app/download"
             className="rounded px-4 py-2 text-black transition duration-300 hover:bg-gray-100 hover:text-gray-700"
           >
             Download
           </a>
           <a
-            href="about"
+            href="https://khanna-lab.vercel.app/about"
             className="rounded px-4 py-2 text-black transition duration-300 hover:bg-gray-100 hover:text-gray-700"
           >
             About
@@ -136,21 +136,21 @@ export default function NavHeader() {
       >
         <div className="flex flex-col font-circ-std">
           <a
-            href="methods"
+            href="https://khanna-lab.vercel.app/methods"
             className="w-full border-t-2 border-gray-100 py-4 text-center text-black hover:bg-gray-100 hover:text-gray-700"
             onClick={() => setMenuOpen(false)}
           >
             Methods
           </a>
           <a
-            href="download"
+            href="https://khanna-lab.vercel.app/download"
             className="w-full border-t-2 border-gray-100 py-4 text-center text-black hover:bg-gray-100 hover:text-gray-700"
             onClick={() => setMenuOpen(false)}
           >
             Download
           </a>
           <a
-            href="about"
+            href="https://khanna-lab.vercel.app/about"
             className="w-full border-t-2 border-gray-100 py-4 text-center text-black hover:bg-gray-100 hover:text-gray-700"
             onClick={() => setMenuOpen(false)}
           >

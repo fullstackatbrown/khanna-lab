@@ -24,7 +24,7 @@
     "@vercel/postgres": "^0.10.0",
     "autoprefixer": "10.4.15",
     "axios": "^1.7.7",
-    "bcrypt": "^5.1.1",
+    "bcrypt": "^6.0.0",
     "clsx": "^2.0.0",
     "firebase": "^10.12.2",
     "firebaseui": "^6.1.0",

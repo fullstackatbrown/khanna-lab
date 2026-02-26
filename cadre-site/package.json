@@ -23,7 +23,7 @@
     "@types/node": "20.5.7",
     "@vercel/postgres": "^0.10.0",
     "autoprefixer": "10.4.15",
-    "axios": "^1.7.7",
+    "axios": "^1.13.5",
     "bcrypt": "^5.1.1",
     "clsx": "^2.0.0",
     "firebase": "^10.12.2",
